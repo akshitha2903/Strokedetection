@@ -12,10 +12,10 @@
         <button type="submit">Upload and Predict</button>
     </form>
     <br>
-    {% if prediction_result %}
+    {% if prediction %}
         <h2>Prediction Result:</h2>
-        <p>Prediction: {{ prediction_result.prediction | round(2) }}</p>
-        <p>Classification: {{ prediction_result.classification }}</p>
+        <p>Prediction: {{ prediction.prediction | round(2) }}</p>
+        <p>Classification: {{ prediction.classification }}</p>
     {% endif %}
 </body>
 </html>
