@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stroke Detection</title>
+</head>
+<body>
+    <h1>Stroke Detection</h1>
+    <form id="uploadForm" method="POST" enctype="multipart/form-data" action="{{ url_for('predict_api') }}">
+        <input type="file" name="file" accept=".jpg, .png, .jpeg">
+        <button type="submit">Upload and Predict</button>
+    </form>
+    <br>
+    {% if prediction_result %}
+        <h2>Prediction Result:</h2>
+        <p>Prediction: {{ prediction_result.prediction | round(2) }}</p>
+        <p>Classification: {{ prediction_result.classification }}</p>
+    {% endif %}
+</body>
+</html>
